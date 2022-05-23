@@ -7,7 +7,6 @@ int main(){
 	
 	int numbers[10];
 	
-	char letters[100];
 	
 	//rand seed for number generate
 	// (if seed is always the same, the numbers will be always
