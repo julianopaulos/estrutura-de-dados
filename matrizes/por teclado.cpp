@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+	/*matriz[0] = 1, matriz[0][0] = 2...*/
+	int matriz[3][3];// = {1,2,3,4,5,6,7,8,9};
+	
+	for(int i = 0; i < sizeof(matriz)/sizeof(matriz[0]); i++){
+		if(!matriz[i] == 0){
+			printf("digite o valor da coluna %i: ", i);
+			scanf("%i", &matriz[i]);
+		}
+		
+		for(int j = 0; j < sizeof(matriz[i])/sizeof(matriz[0][0]); j++){
+			printf("digite o valor da linha %i: ", i);
+			scanf("%i", &matriz[i][j]);
+		}
+		
+	}
+	printf("\n");
+	
+	for(int i = 0; i < sizeof(matriz)/sizeof(matriz[0]); i++){
+		for(int j = 0; j < sizeof(matriz[i])/sizeof(matriz[0][0]); j++){
+			printf("coluna [%i],  linha[%i]: %i\n", i, j, matriz[i][j]);
+		}
+		printf("\n");
+	}
+	
+}
