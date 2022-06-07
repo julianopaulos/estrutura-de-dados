@@ -19,7 +19,7 @@ int main(){
 		printf("%3i",numbers[i]);
 	}
 	
-	for(i = 0; i < 10; i--){
+	for(i = 0; i < 10; i++){
 		copy = numbers[i];
 		numbers[i] = numbers[end];
 		numbers[end] = copy;
