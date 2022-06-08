@@ -7,8 +7,6 @@ int main(){
 	
 	int numbers[20], copy, end=19, i;
 	
-	srand(time(NULL));
-	
 	for(i = 0; i < sizeof(numbers)/sizeof(numbers[0]); i++){
 		printf("digite a posicao %i: ", i);
 		scanf("%i", &numbers[i]);
