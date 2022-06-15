@@ -33,7 +33,7 @@ int main(){
 	
 	printf("\n\nO valor total dos produtos vendidos foi de R$%.2f,", total);
 	printf(" e a comissao paga ao vendedor foi de R$%.2f, deixando o salario em R$%.2f\n\n", comission, comission+salary);
-	printf("O produto mais vendido foi o %s, com %i unidades\n\n", products[bestSellingProduct], quantityBestSellingProduct);
+	printf("O produto mais vendido foi o %s, com %i unidades, com valor total de %.2f\n\n", products[bestSellingProduct], quantityBestSellingProduct, quantityBestSellingProduct * prices[bestSellingProduct]);
 	
 	return 0;
 }
