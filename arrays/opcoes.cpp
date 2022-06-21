@@ -34,6 +34,9 @@ int main(){
 					printf("posicao %i, valor %.2f \n", i, numbers[i]);
 				}
 			break;
+			default:
+				printf("opcao invalida!\n");
+			break;
 		}
 		printf("\n");
 	}
