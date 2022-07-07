@@ -5,7 +5,7 @@
 
 #define length 4
 int main(){
-	int matriz[length][length] = {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4};
+	int matriz[length][length] = {16, 3, 2, 13, 5, 10, 11, 8, 9, 6, 7, 12, 4, 15, 14, 1};
 	int rowSum, columnSum[length] = {0, 0, 0, 0};
 	int mainDiagonal = 0, secundaryDiagonal = 0;
 	int lastRowResult, lastColumnResult;
