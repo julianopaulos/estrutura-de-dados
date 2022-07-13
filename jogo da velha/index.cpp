@@ -41,15 +41,19 @@ int main(){
 		
 		printf("\t\t");
 		for(int j = 0; j < sizeof(matriz[i])/sizeof(matriz[0][0]); j++){
-			printf("_%c_|", matriz[i][j]);
+			if(j == sizeof(matriz[i])/sizeof(matriz[0][0]) - 1){
+				printf("_%c_", matriz[i][j]);
+			}else{
+				printf("_%c_|", matriz[i][j]);
+			}
 		}
 		printf("\n");
 	}
+	printf("\t\t   |   |\n");
 	
 	
 	for(int i = 0; i < sizeof(matriz)/sizeof(matriz[0]); i++){
 		if(i > 0){
-			printf("value count: %d, lastvalue: %c, atual value: %c", i, lastValue, matriz[i][i]);
 			if(lastValue == matriz[i][i]){
 				isEqualValues = true;
 				winner= lastValue;	
@@ -60,6 +64,24 @@ int main(){
 		}
 		
 		lastValue = matriz[i][i];
+	}
+	
+	if(isEqualValues && winner){
+		printf("O Vencedor do jogo da velha foi %c", winner);
+	}
+	
+	for(int i = 0; i < sizeof(matriz)/sizeof(matriz[0]); i++){
+		if(i > 0){
+			if(lastValue == matriz[i][sizeof(matriz)/sizeof(matriz[0]) -1 - i]){
+				isEqualValues = true;
+				winner= lastValue;	
+			}else{
+				isEqualValues = false;
+				break;
+			}
+		}
+		
+		lastValue = matriz[i][sizeof(matriz)/sizeof(matriz[0]) -1 - i];
 	}
 	
 	if(isEqualValues && winner){
