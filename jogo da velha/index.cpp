@@ -3,7 +3,8 @@
 
 int main(){
 	char array[9] = {""}, matriz[3][3] = {""}, lastValue = '0', winner = '0';
-	int position, count = 0, lastLine, verticalCount, horizontalCount;
+	char lastLine = '0', lastColumn = '0';
+	int position, count = 0, verticalCount, horizontalCount;
 	bool isEqualValues = false, isVerticalValues = false, isHorizontalValue = false;
 	
 	printf("Jogo da velha\n\n");
@@ -89,18 +90,24 @@ int main(){
 	}
 	
 	for(int i = 0; i < sizeof(matriz)/sizeof(matriz[0]); i++){
-		lastLine = i;
-		count = 0;
+		horizontalCount = 0;
 		for(int j = 0; j < sizeof(matriz[i])/sizeof(matriz[0][0]); j++){
-			if(j == lastLine){
-				verticalCount++;
-				winner = matriz[i][j];
+			//coluna 0, 1 e 2
+			if(lastColumn == matriz[i][j]){
+				winner = lastColumn;
+				horizontalCount++;
 			}
+			lastColumn = matriz[i][j];
 		}
 		
-		if(verticalCount == 3){
+		lastColumn = '0';
+		
+		if(verticalCount == 2 || horizontalCount == 2){
 			printf("O Vencedor do jogo da velha foi %c", winner);
+			return 0;
 		}
 	}
 	
+	
+	printf("O jogo da velha ficou empatado\n");
 }
