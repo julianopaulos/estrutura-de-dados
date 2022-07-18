@@ -69,6 +69,7 @@ int main(){
 	
 	if(isEqualValues && winner){
 		printf("O Vencedor do jogo da velha foi %c", winner);
+		return 0;
 	}
 	
 	for(int i = 0; i < sizeof(matriz)/sizeof(matriz[0]); i++){
@@ -87,22 +88,31 @@ int main(){
 	
 	if(isEqualValues && winner){
 		printf("O Vencedor do jogo da velha foi %c", winner);
+		return 0;
 	}
 	
 	for(int i = 0; i < sizeof(matriz)/sizeof(matriz[0]); i++){
 		horizontalCount = 0;
+		verticalCount = 0;
 		for(int j = 0; j < sizeof(matriz[i])/sizeof(matriz[0][0]); j++){
-			//coluna 0, 1 e 2
-			if(lastColumn == matriz[i][j]){
-				winner = lastColumn;
+			//linha 0, 1 e 2
+			if(lastLine == matriz[i][j]){
+				winner = lastLine;
 				horizontalCount++;
 			}
-			lastColumn = matriz[i][j];
+			
+			if(matriz[i+1][j] && lastLine == matriz[i+1][j]){
+				winner = lastLine;
+				verticalCount++;
+			}
+			
+			lastLine = matriz[i][j];
 		}
 		
 		lastColumn = '0';
-		
-		if(verticalCount == 2 || horizontalCount == 2){
+		printf("vertical count %i\n", verticalCount);
+		printf("horizontal count %i\n", horizontalCount);
+		if(horizontalCount == 2){
 			printf("O Vencedor do jogo da velha foi %c", winner);
 			return 0;
 		}
