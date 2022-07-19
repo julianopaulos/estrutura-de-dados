@@ -94,25 +94,26 @@ int main(){
 	for(int i = 0; i < sizeof(matriz)/sizeof(matriz[0]); i++){
 		horizontalCount = 0;
 		verticalCount = 0;
+		lastLine = '0';
 		for(int j = 0; j < sizeof(matriz[i])/sizeof(matriz[0][0]); j++){
-			//linha 0, 1 e 2
+			
+			
 			if(lastLine == matriz[i][j]){
 				winner = lastLine;
 				horizontalCount++;
 			}
-			
-			if(matriz[i+1][j] && lastLine == matriz[i+1][j]){
+						
+			if(matriz[j][i] && lastColumn == matriz[j][i]){
 				winner = lastLine;
 				verticalCount++;
 			}
 			
 			lastLine = matriz[i][j];
+			lastColumn = matriz[j][i];
 		}
 		
 		lastColumn = '0';
-		printf("vertical count %i\n", verticalCount);
-		printf("horizontal count %i\n", horizontalCount);
-		if(horizontalCount == 2){
+		if(horizontalCount == 2 || verticalCount == 2){
 			printf("O Vencedor do jogo da velha foi %c", winner);
 			return 0;
 		}
