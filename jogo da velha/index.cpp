@@ -97,14 +97,13 @@ int main(){
 		lastLine = '0';
 		for(int j = 0; j < sizeof(matriz[i])/sizeof(matriz[0][0]); j++){
 			
-			
 			if(lastLine == matriz[i][j]){
 				winner = lastLine;
 				horizontalCount++;
 			}
-						
+			
 			if(matriz[j][i] && lastColumn == matriz[j][i]){
-				winner = lastLine;
+				winner = lastColumn;
 				verticalCount++;
 			}
 			
